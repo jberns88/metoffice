@@ -1,6 +1,6 @@
 {
     "name": "jberns88/metoffice",
-    "description": "SDK for the UK MetOFfice DataPoint API",
+    "description": "SDK for the UK MetOffice DataPoint API",
     "type": "library",
     "require": {
         "guzzlehttp/guzzle": "^6.3"
