@@ -1,0 +1,9 @@
+{
+    "name": "jberns88/metoffice",
+    "description": "SDK for the UK MetOFfice DataPoint API",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "license": "MIT"
+}
