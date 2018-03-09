@@ -5,5 +5,10 @@
     "require": {
         "guzzlehttp/guzzle": "^6.3"
     },
-    "license": "MIT"
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Jberns88\\MetOffice\\": "src/Jberns88/MetOffice"
+        }
+    }
 }
