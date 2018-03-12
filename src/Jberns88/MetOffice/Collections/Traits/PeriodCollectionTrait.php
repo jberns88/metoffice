@@ -40,10 +40,9 @@ trait PeriodCollectionTrait {
 
     private function getTemperatures() {
         $periods = iterator_to_array($this);
-        $temperatures = array_map(function($period) {
+        return array_map(function($period) {
             return $period->getTemperature();
         }, $periods);
-        return $temperatures;
     }
 
     public function getHighestGustSpeed() {
@@ -59,8 +58,7 @@ trait PeriodCollectionTrait {
         $gusts = array_map(function($period) {
             return $period->getGustSpeed();
         }, $periods);
-        $gusts = array_filter($gusts);
-        return $gusts;
+        return array_filter($gusts);
     }
 
     public function getHighestWindSpeed() {
@@ -76,8 +74,39 @@ trait PeriodCollectionTrait {
         $winds = array_map(function($period) {
             return $period->getWindSpeed();
         }, $periods);
-        $winds = array_filter($winds);
-        return $winds;
+        return array_filter($winds);
+    }
+
+    public function getHighestPressure() {
+        return $this->max($this->getPressures());
+    }
+
+    public function getLowestPressure() {
+        return $this->min($this->getPressures());
+    }
+
+    private function getPressures() {
+        $periods = iterator_to_array($this);
+        $pressures = array_map(function($period) {
+            return $period->getPressure();
+        }, $periods);
+        return array_filter($pressures);
+    }
+
+    public function getHighestVisibility() {
+        return $this->max($this->getVisibilities());
+    }
+
+    public function getLowestVisibility() {
+        return $this->min($this->getVisibilities());
+    }
+
+    private function getVisibilities() {
+        $periods = iterator_to_array($this);
+        $visibilities = array_map(function($period) {
+            return $period->getVisibility();
+        }, $periods);
+        return array_filter($visibilities);
     }
 
     private function max($array) {

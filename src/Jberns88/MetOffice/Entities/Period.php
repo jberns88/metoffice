@@ -37,6 +37,7 @@ abstract class Period {
     const WIND_GUST = "G";
     const SCREEN_REL_HUMIDITY = "H";
     const PRECIPITATION_PROBABILITY = "Pp";
+    const PRESSURE = "P";
 
     protected $visibility;
     protected $windDirection;
@@ -54,10 +55,11 @@ abstract class Period {
         $this->windSpeed = (int) isset($data[$this::WIND_SPEED]) ? $data[$this::WIND_SPEED] : 0;
         $this->weatherType = (int) isset($data[$this::WEATHER_TYPE]) ? $data[$this::WEATHER_TYPE] : 0;
         $this->feelsLike = isset($data[$this::FEELS_LIKE_TEMP]) ? (int) $data[$this::FEELS_LIKE_TEMP] : 0;
-        $this->temp = isset($data[$this::TEMP]) ? (int) $data[$this::TEMP] : 0;
+        $this->temp = isset($data[$this::TEMP]) ? (float) $data[$this::TEMP] : 0;
         $this->gustSpeed = isset($data[$this::WIND_GUST]) ? (int) $data[$this::WIND_GUST] : 0;
         $this->humidity = isset($data[$this::SCREEN_REL_HUMIDITY]) ? (int) $data[$this::SCREEN_REL_HUMIDITY] : 0;
         $this->precipitationPropability = isset($data[$this::PRECIPITATION_PROBABILITY]) ? (int) $data[$this::PRECIPITATION_PROBABILITY] : 0;
+        $this->pressure = isset($data[$this::PRESSURE]) ? (int) $data[$this::PRESSURE] : 0;
     }
 
     public function getVisibility() {
@@ -94,6 +96,10 @@ abstract class Period {
 
     public function getPrecipitationPropability() {
         return $this->precipitationPropability;
+    }
+
+    public function getPressure() {
+        return $this->pressure;
     }
 
 }

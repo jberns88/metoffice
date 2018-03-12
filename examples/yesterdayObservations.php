@@ -20,6 +20,8 @@ foreach ($locations as $location) {
         echo 'Temp: ' . $day->getLowestTemperature() . '-' . $day->getHighestTemperature() . PHP_EOL;
         echo 'Gust: ' . $day->getHighestGustSpeed() . '-' . $day->getLowestGustSpeed() . PHP_EOL;
         echo 'Wind: ' . $day->getHighestWindSpeed() . '-' . $day->getLowestWindSpeed() . PHP_EOL;
+        echo 'Pressure: ' . $day->getHighestPressure() . '-' . $day->getLowestPressure() . PHP_EOL;
+        echo 'Visibility: ' . $day->getHighestVisibility() . '-' . $day->getLowestVisibility() . PHP_EOL;
         echo 'Weather type: ' . $period->getWeatherType() . PHP_EOL;
         echo PHP_EOL;
     } catch (Exception $e) {

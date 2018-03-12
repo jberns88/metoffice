@@ -67,4 +67,20 @@ trait PeriodCollectionTrait {
         return $this->periods->getLowestWindSpeed();
     }
 
+    public function getHighestPressure() {
+        return $this->periods->getHighestPressure();
+    }
+
+    public function getLowestPressure() {
+        return $this->periods->getLowestPressure();
+    }
+
+    public function getHighestVisibility() {
+        return $this->periods->getHighestVisibility();
+    }
+
+    public function getLowestVisibility() {
+        return $this->periods->getLowestVisibility();
+    }
+
 }
